@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#numbers div{
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+    margin: 10px;
+    border-color: black;
+}
+
+.bk-gray{
+    background-color: #376b73;
+    color: white;
+}
+
+.equal{
+    background-color: #054c75;
+    color: white;
+}
