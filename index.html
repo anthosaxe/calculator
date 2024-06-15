@@ -5,32 +5,39 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- 
   <link rel="stylesheet" href="./src/css/style.css">
-  <title>Vite App</title>
+  <title>Calculator</title>
 </head>
 
 <body class="grid grid-cols-12 p-5">
-  <div class="col-span-4"></div>
-  <div class="col-span-4 grid grid-cols-4 border-4 rounded-lg border-gray-600">
-    <div class="col-span-4 border-4 border-gray-600 m-5 mb-0 rounded-lg ">
-      <p type="text" name="entry" id="entry" class="w-full py-2 pr-3 text-2xl text-right">0</p>
+  <div class="col-span-4">
+    <p id="res"></p>
+  </div>
+
+  <div class="bg-slate-300 col-span-4 grid grid-cols-4 border-4 rounded-lg border-gray-600">
+    <div class="col-span-4 border-4 border-gray-600 m-5 mb-0 rounded-lg min-h-16 bg-white">
+      <p type="text" name="entry" id="entry" class="w-full py-2 pr-3 text-2xl text-right"></p>
     </div>
 
-    <div class=" col-span-4 grid grid-cols-4 m-5" id="numbers">
-      <div class="bk-gray col-span-1" >
+    <div class="min-h-60 col-span-4 grid grid-cols-4 m-5" id="numbers">
+      <div class="bk-gray col-span-1">
         <button id="(">
-          (
+          oin
+          <audio src="./src/media/coin.mp3"></audio>
         </button>
       </div>
       <div class="bk-gray col-span-1">
         <button id=")">
-          )
+          red
         </button>
       </div>
-      <div class="bk-gray col-span-1">
+      <div class="bk-gray col-span-1 flex justify-center">
         <button id="%">
-          %
+          <svg class="w-5" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M384 160c-17.7 0-32-14.3-32-32s14.3-32 32-32H544c17.7 0 32 14.3 32 32V288c0 17.7-14.3 32-32 32s-32-14.3-32-32V205.3L342.6 374.6c-12.5 12.5-32.8 12.5-45.3 0L192 269.3 54.6 406.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160c12.5-12.5 32.8-12.5 45.3 0L320 306.7 466.7 160H384z" />
+          </svg>
         </button>
       </div>
       <div class="bk-gray col-span-1">
@@ -126,7 +133,20 @@
 
   </div>
   </div>
-  <div class="col-span-4"></div> 
+
+  <div class="col-span-4 p-5 grid grid-cols-3">
+    <div class="col-span-3 flex justify-center">
+      <video id="rick" class="hidden w-2/3" src="./src/media/rickroll.mp4"></video>
+    </div>
+    <div class="col-span-1"></div>
+    <div class="col-span-1 mt-3 flex justify-center">
+      <button id="rick_stop" class="hidden border-4 rounded-lg">
+        Stop Rickrolling
+      </button>
+    </div>
+
+  </div>
+
   <script src="./src/js/script"></script>
 </body>
 
