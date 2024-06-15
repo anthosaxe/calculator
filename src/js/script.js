@@ -35,8 +35,7 @@
     document.getElementById('/').addEventListener('click', () => addToEntry("/"));
     
     document.getElementById('(').addEventListener('click', () => {
-        let audioElement = document.querySelector('audio');
-        audioElement.play();
+        document.getElementById('res').innerHTML = "";
     });
 
     document.getElementById(')').addEventListener('click', () => {
