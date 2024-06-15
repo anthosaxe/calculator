@@ -21,7 +21,7 @@ export default defineConfig({
       config: './tailwind.config.js'
     })
   ],
-  base: '/restaurant-css-framework-vite/',
+  base: '/calculator/',
   root,
   build: {
     outDir,
