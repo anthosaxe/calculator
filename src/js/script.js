@@ -29,17 +29,29 @@
     });
 
     //opération
-    document.getElementById('(').addEventListener('click', () => {
-        let audioElement = document.querySelector('audio');
-        audioElement.play();
-    });
-    document.getElementById(')').addEventListener('click', () => {
-        document.querySelector('body').style.background = 'red';
-    });
     document.getElementById('+').addEventListener('click', () => addToEntry("+"));
     document.getElementById('-').addEventListener('click', () => addToEntry("-"));
     document.getElementById('*').addEventListener('click', () => addToEntry("*"));
     document.getElementById('/').addEventListener('click', () => addToEntry("/"));
+    
+    document.getElementById('(').addEventListener('click', () => {
+        let audioElement = document.querySelector('audio');
+        audioElement.play();
+    });
+
+    document.getElementById(')').addEventListener('click', () => {
+        function generateRandomColor() {
+            const r = Math.floor(Math.random() * 256); 
+            const g = Math.floor(Math.random() * 256); 
+            const b = Math.floor(Math.random() * 256); 
+        
+            const colorHex = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+        
+            return colorHex;
+        }
+        document.querySelector('body').style.background = generateRandomColor();
+    });
+
     document.getElementById('%').addEventListener('click', () => {
         document.getElementById('rick').classList.remove('hidden');
         document.getElementById('rick_stop').classList.remove('hidden');
