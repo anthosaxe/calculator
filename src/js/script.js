@@ -5,12 +5,28 @@
     }
 
     function computeResult(str) {
-        str = str.replace(/(\d+(\.\d+)?)%/g, "($1/100)");
         return new Function("return " + str)();
     }
 
     //nombre
-    document.getElementById('0').addEventListener("click", () => addToEntry("0"));
+    document.getElementById('0').addEventListener("click", () => {
+        let ent = document.getElementById('entry').textContent;
+        let ent_tab = ent.split("");
+        let all_0 = true;
+
+        // Vérification de tous les caractères
+        for (let i = 0; i < ent_tab.length; i++) {
+            if (ent_tab[i] !== "0") {
+                all_0 = false;
+            }
+        }
+
+        // Ajout d'un zéro si nécessaire
+        if (!all_0 || ent === "") {
+            addToEntry("0");
+        }
+
+    });
     document.getElementById('1').addEventListener("click", () => addToEntry("1"));
     document.getElementById('2').addEventListener("click", () => addToEntry("2"));
     document.getElementById('3').addEventListener("click", () => addToEntry("3"));
@@ -33,19 +49,19 @@
     document.getElementById('-').addEventListener('click', () => addToEntry("-"));
     document.getElementById('*').addEventListener('click', () => addToEntry("*"));
     document.getElementById('/').addEventListener('click', () => addToEntry("/"));
-    
+
     document.getElementById('(').addEventListener('click', () => {
         document.getElementById('res').innerHTML = "";
     });
 
     document.getElementById(')').addEventListener('click', () => {
         function generateRandomColor() {
-            const r = Math.floor(Math.random() * 256); 
-            const g = Math.floor(Math.random() * 256); 
-            const b = Math.floor(Math.random() * 256); 
-        
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+
             const colorHex = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-        
+
             return colorHex;
         }
         document.querySelector('body').style.background = generateRandomColor();
@@ -54,9 +70,9 @@
     document.getElementById('%').addEventListener('click', () => {
         document.getElementById('rick').classList.remove('hidden');
         document.getElementById('rick_stop').classList.remove('hidden');
-        
+
         document.getElementById('rick').play();
-        
+
         document.getElementById('rick_stop').addEventListener('click', () => {
             document.getElementById('rick').pause();
             document.getElementById('rick').currentTime = 0;
